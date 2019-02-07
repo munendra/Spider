@@ -1,0 +1,178 @@
+.environments-wrapper {
+  padding: 20px 0;
+
+  .title-wrapper {
+    padding-bottom: 4px;
+
+    .title {
+      padding-left: 5px;
+
+      .count-cricle {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: absolute;
+        width: 26px;
+        height: 26px;
+        background: rgba(232, 62, 140, 0.48);
+        border: 2px solid #fff;
+        border-radius: 100%;
+        box-shadow: 5px 0 10px 0 #f5f5f5;
+        right: 0;
+        left: 5px;
+        margin-top: -15px;
+        font-size: 14px;
+        font-weight: bolder;
+        color: #FFF;
+      }
+    }
+
+    h2 {
+      margin-bottom: 0px;
+    }
+
+    .description {
+      font-size: 12px;
+      color: #7f7e80;
+      font-weight: bold;
+      text-shadow: none;
+      margin: 0;
+      padding-left: 10px;
+    }
+  }
+
+  .environment-body {
+    padding-top: 20px;
+    background: #FFFFFF;
+    min-height: 450px;
+
+    .environments {
+      h3 {
+        font-weight: bold;
+        line-height: 18px;
+
+        .add-environments {
+          font-weight: normal;
+          font-size: 14px;
+          padding: 0;
+          line-height: 32px;
+          color: rgb(80, 159, 233);
+        }
+      }
+
+      .button-wrapper {
+        text-align: right;
+        width: 58%;
+        display: flex;
+        position: absolute;
+        right: 0;
+      }
+
+      .searchfilter {
+        width: 100%;
+        margin-bottom: 10px;
+      }
+
+      .environment {
+        cursor: pointer;
+        margin-bottom: 10px;
+        padding-bottom: 10px;
+        margin: 0;
+        position: relative;
+
+        &:focus {
+          outline: none;
+        }
+
+        &::after {
+          content: '';
+          display: block;
+          width: 0;
+          height: 1px;
+          background: rgba(0, 0, 0, 0.09);
+          transition: width .4s;
+        }
+
+        &:hover::after {
+          width: 100%;
+          transition: width .4s;
+        }
+
+        &.active::after {
+          width: 100%;
+          transition: width .4s;
+        }
+
+        h2 {
+          font-size: 1.0rem;
+          margin-bottom: 2px;
+          font-weight: bold;
+          line-height: 28px;
+        }
+
+        p {
+          line-height: 28px;
+          padding: 0;
+          margin: 0;
+          font-size: 1.0rem;
+
+        }
+
+        a {
+          line-height: 32px;
+        }
+
+        input[type="text"] {
+          border: none;
+          background: transparent;
+        }
+
+
+
+        .control {
+          position: absolute;
+          top: 2%;
+          right: 0;
+          display: none;
+
+          ul {
+            margin: 0;
+            padding: 0;
+
+            li {
+              padding: 0;
+              list-style: none;
+            }
+          }
+
+          .btn {
+            padding: 0;
+            margin: 0;
+          }
+
+          .btn-delete,
+          .btn-edit {
+            background: none;
+            color: #7f7e80;
+          }
+
+          .btn-delete:hover {
+            color: rgba(211, 47, 47, 0.8);
+          }
+
+          .btn-edit:hover {
+            color: #22b93c;
+          }
+        }
+
+
+        &:hover {
+          .control {
+            display: block;
+          }
+        }
+
+      }
+    }
+  }
+}

@@ -1,0 +1,34 @@
+[
+  {
+    "Id": "692F14FC-7EAD-4130-B6E9-3566BFA8E89F",
+    "name": "Development",
+    "url": "http://www.development.com",
+    "description": "dev env",
+    "isActive": true,
+    "applicationId": "4F3098F4-64A6-498F-A36C-4DFCDD7EB85E",
+    "Configurations": [
+      {
+        "key": "connectionString",
+        "value": "Sql server",
+        "description": "connect to local database",
+        "isActive": true,
+        "environmentId": "692F14FC-7EAD-4130-B6E9-3566BFA8E89F"
+      },
+      {
+        "key": "toggle",
+        "value": "True",
+        "description": "Description",
+        "isActive": true,
+        "environmentId": "692F14FC-7EAD-4130-B6E9-3566BFA8E89F"
+      }
+    ] 
+  },
+  {
+    "Id": "9112FBAB-58E8-4C6E-ABBE-F88D6D576CE9",
+    "name": "Production",
+    "url": "http://www.production.com",
+    "description": "Prod env",
+    "isActive": true,
+    "applicationId": "0F4F4BF0-590A-4996-B4D5-7C7B9C21908A"
+  }
+]

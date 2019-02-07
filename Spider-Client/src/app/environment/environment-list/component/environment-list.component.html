@@ -1,0 +1,83 @@
+<div class="environments-wrapper">
+  <div class="row">
+    <div class="col">
+      <div class="title-wrapper">
+        <div class="title">
+          <h2>
+            <span class="count-cricle">{{environmentListLookUp?.totalEnvironmets}}</span>
+            {{environmentListLookUp?.application?.name}}
+          </h2>
+
+        </div>
+        <p class="description">
+          {{environmentListLookUp?.application?.description}}
+        </p>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <div class="row environment-body">
+        <div class="col-3">
+          <div class="environments">
+            <div class="row">
+              <div class="col">
+                <h3>
+                  Environments
+                  <a class="btn btn-link add-environments" (click)="onEnvironmentAdd()">Add new</a>
+                </h3>
+              </div>
+              <div class="col">
+                <div class="button-wrapper h-100 justify-content-center align-items-center">
+                  <label class="switch" for="isActiveToggle" title="{{ this.filter ? 'Show disabled' : 'Show enabled'}} environment">
+                    <input type="checkbox" name="isActiveToggle" id="isActiveToggle" checked="checked" [ngModel]="filter"
+                      (ngModelChange)="onFilterChange($event)" />
+                    <span class="slider round"></span>
+                  </label>
+                </div>
+
+              </div>
+              <div class="col-12">
+                <input type="text" placeholder="Search environment" class="form-control searchfilter" name="search"
+                  [ngModel]="searchfilter" (input)="onSearchChange($event.target.value)" />
+              </div>
+            </div>
+            <div id="environment-{{i}}" class="environment" *ngFor="let environment of filterdEnvironments;let i = index;let even = even; let odd = odd"
+              [ngClass]="{ odd: odd, even: even }" routerLink="{{environment.id}}/configurations" routerLinkActive="active">
+              <h2> {{environment.name}}</h2>
+              <p>{{environment.description}}</p>
+              <a href="{{environment.url}}" target="_blank">{{environment.url}}</a>
+              <div class="control">
+                <ul>
+                  <li>
+                    <button type="button" class="btn btn-sqr btn-link" clickstoppropagation placement="right"
+                      ngbTooltip="Copy configuration URL" (click)="doCopy(environment.id)">
+                      <i class="fa fa-copy"></i>
+                    </button>
+                  </li>
+                  <li>
+                    <button type="button" ngbTooltip="Edit" class="btn btn-sqr btn-edit" clickstoppropagation (click)="onEnvironmentEdit(environment.id)">
+                      <i class="fa fa-edit"></i>
+                    </button>
+                  </li>
+                  <li>
+                    <button type="button" ngbTooltip="Delete" class="btn btn-sqr btn-delete" clickstoppropagation
+                      (click)="delete(environment.id)">
+                      <i class="fa fa-trash"></i>
+                    </button>
+                  </li>
+
+                </ul>
+              </div>
+            </div>
+          </div>
+
+        </div>
+        <div class="col">
+          <router-outlet></router-outlet>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>

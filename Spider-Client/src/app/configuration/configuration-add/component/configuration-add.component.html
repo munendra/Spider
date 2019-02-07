@@ -1,0 +1,56 @@
+<form [formGroup]="addConfigurationForm" (ngSubmit)="onSubmit()">
+
+  <div class="modal-header">
+    <h4 class="modal-title">New configuration</h4>
+    <button type="button" class="close" aria-label="Close" (click)="activeModal.dismiss('Cross click')">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+
+    <div class="form-group">
+      <label for="name">Key</label>
+      <input type="text" formControlName="key" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.key.errors }"
+        id="name" placeholder="Key">
+      <div *ngIf="submitted && f.key.errors" class="invalid-feedback">
+        <div *ngIf="f.key.errors.required">Configuration key is required</div>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="name">Configuration value</label>
+      <input type="text" formControlName="value" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.value.errors }"
+        id="name" placeholder="Configuration value">
+      <div *ngIf="submitted && f.value.errors" class="invalid-feedback">
+        <div *ngIf="f.value.errors.required">Configuration value is required</div>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="isActive">
+        Status &nbsp;
+      </label>
+      <label class="switch" for="isActive">
+        <input type="checkbox" formControlName="isActive" name="isActive" id="isActive" />
+        <span class=" slider round"></span>
+      </label>
+
+    </div>
+
+
+    <div class="form-group">
+      <label for="description">Description</label>
+      <textarea name="description" [ngClass]="{ 'is-invalid': submitted && f.description.errors }" formControlName="description"
+        class="form-control" id="description" placeholder="Application description"></textarea>
+      <div *ngIf="submitted && f.description.errors" class="invalid-feedback">
+        <div *ngIf="f.description.errors.required">
+          Configuration description is required
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="modal-footer">
+    <button type="submit" class="btn btn-add">Add</button>
+    <button type="close" class="btn btn-outline-dark" (click)="activeModal.close('Close click')">Close</button>
+  </div>
+</form>

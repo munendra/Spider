@@ -1,0 +1,66 @@
+.configurations {
+  h3 {
+    font-weight: bold;
+    line-height: 18px;
+    margin-bottom: 32px;
+  }
+
+  .configuration-wrapper {
+    ul {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+
+      li {
+        margin: 0;
+        padding: 0;
+        padding: 20px;
+        -webkit-box-shadow: 0px 2px 10px -1px rgba(0, 0, 0, 0.15);
+        -moz-box-shadow: 0px 2px 10px -1px rgba(0, 0, 0, 0.15);
+        box-shadow: 0px 2px 10px -1px rgba(0, 0, 0, 0.15);
+        margin-bottom: 10px;
+
+        .v-center {
+          align-items: center;
+          justify-content: center;
+        }
+
+        .control {
+          display: none;
+
+          ul {
+            li {
+              background: none;
+              box-shadow: none;
+              padding: 0;
+              margin: 0;
+
+              .btn {
+                background: none;
+                color: #7f7e80;
+                line-height: 14px;
+                padding: 0;
+              }
+
+              .btn-edit:hover {
+                color: #22b93c;
+              }
+
+              .btn-delete:hover {
+                color: rgba(211, 47, 47, 0.8);
+              }
+            }
+          }
+        }
+
+        &:hover {
+          .control {
+            display: block;
+          }
+        }
+      }
+    }
+
+
+  }
+}

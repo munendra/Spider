@@ -1,0 +1,49 @@
+<div class="configurations">
+  <div class="configurations-header">
+    <div class="row">
+      <div class="col">
+        <h3>
+          Configurations
+        </h3>
+      </div>
+      <div class="col text-right">
+        <button (click)="onAdd()" class="animated rotateIn btn btn-circle btn-add" placement="left" ngbTooltip="Add configuration">
+          <i class="fa fa-plus"></i>
+        </button>
+      </div>
+    </div>
+  </div>
+  <div class="configuration-wrapper">
+    <ul>
+      <li *ngFor="let configuration of configurationList;let i = index;let even = even; let odd = odd" id="{{configuration.id}}"
+        [ngClass]="{ odd: odd, even: even }">
+        <div class="row">
+          <div class="col-11">
+            <div class="row">
+              <label>{{configuration.key}}</label>
+              <input type="text" readonly="readonly" disabled="disabled" value="{{configuration.value}}" class="form-control" />
+            </div>
+          </div>
+          <div class="col-1">
+            <div class="row v-center">
+              <div class="control">
+                <ul>
+                  <li>
+                    <button class="btn btn-sqr btn-edit" (click)="onEdit(configuration)">
+                      <i class="fa fa-edit"></i>
+                    </button>
+                  </li>
+                  <li>
+                    <button class="btn btn-sqr btn-delete" (click)="onDelete(configuration.id)">
+                      <i class="fa fa-trash"></i>
+                    </button>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>

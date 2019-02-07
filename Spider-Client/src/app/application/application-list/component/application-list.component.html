@@ -1,0 +1,40 @@
+<div class="row application-wrapper">
+  <div class="col-12">
+    <div class="title">
+      <h2>
+        Applications
+      </h2>
+      <div class="rht-wrapper">
+        <button type="button" class="animated rotateIn btn btn-circle btn-add" placement="left" ngbTooltip="Add Application"
+          (click)="addApplicationPopup()">
+          <i class="fa fa-plus"></i>
+        </button>
+      </div>
+    </div>
+  </div>
+  <div class="col-3" *ngFor="let application of applicationList" id="application-{{application.id}}">
+    <div class='card' routerLink="/application/{{application.id}}/environments">
+      <div class="card-header">
+        <div class="left-side">
+          <h2>
+            {{application.name}}
+          </h2>
+        </div>
+        <div class="clearfix"></div>
+      </div>
+      <div class="card-body">
+        <p>
+          {{application.description}}
+        </p>
+      </div>
+      <div class="card-control animated slideInRight">
+        <button class="btn btn-sqr btn-edit" clickStopPropagation (click)="edit(application.id)">
+          <i class="fa fa-edit"></i>
+        </button>
+        <button class="btn btn-sqr btn-delete" clickStopPropagation (click)="delete(application.id)">
+          <i class="fa fa-trash"></i>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

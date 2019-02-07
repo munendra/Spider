@@ -1,0 +1,49 @@
+.notification {
+  position: fixed;
+  right: 0;
+  top: 0;
+  min-height: 100px;
+  background: rgba(0, 0, 0, 0.5);
+  color: #FFF;
+  padding: 15px;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-flow: row wrap;
+  justify-content: space-around;
+  z-index: 999;
+
+  &.Error {
+    background: rgba(214, 31, 31, 0.8);
+  }
+
+  &.Success {
+    background: rgba(14, 150, 75, 0.8);
+  }
+
+  .notification-body,
+  .notification-icon {
+    color: white;
+    padding-top: 10%;
+    text-align: center;
+  }
+
+  .notification-icon {
+    background: rgba($color: #000000, $alpha:0.2);
+    width: 20%;
+  }
+
+  .notification-body {
+    width: 80%;
+    text-align: left;
+
+    p {
+      line-height: 18px;
+    }
+  }
+}
